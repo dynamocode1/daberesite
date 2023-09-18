@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom CSS for the blue and white theme */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .about-section {
+            padding: 50px 0;
+        }
+        .service-icon {
+            font-size: 36px;
+            margin-right: 10px;
+        }
+        .footer {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        /* Add custom styles for new sections */
+        .highlight-section {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+        .contact-section {
+            background-color: #f0f0f0;
+            padding: 50px 0;
+        }
+        /* FAQ Section styles */
+        .faq-section {
+            padding: 50px 0;
+        }
+        .faq-question {
+            cursor: pointer;
+        }
+        .faq-answer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    {%extends 'navbar.html'%}
+    {%block page_contents%}
+    {%block body%}
+
+    <!-- Header Section -->
+    <div class="header text-center">
+        <h1>Welcome to Your Store</h1>
+        <p>Your One-Stop Shop for iPhones and Bitcoin Trading</p>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="container about-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>About Us</h2>
+                <p>
+                    At Your Store, we are passionate about providing you with the latest and greatest iPhones. 
+                    Whether you're looking for the newest iPhone model or a budget-friendly option, we've got you 
+                    covered.
+                </p>
+                <p>
+                    In addition to our wide range of iPhones, we offer a secure and user-friendly platform for 
+                    trading Bitcoin (BTC). Our mission is to make Bitcoin trading accessible to everyone, ensuring 
+                    a seamless experience.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <!-- FontAwesome icons -->
+                <h2>Our Services</h2>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-mobile-alt service-icon"></i> Latest iPhone Models</li>
+                    <li><i class="fas fa-coins service-icon"></i> Secure Bitcoin Trading</li>
+                    <!-- Add more services with icons as needed -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPhone Sales Section -->
+    <section class="container-fluid bg-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Explore Our iPhone Collection</h2>
+                    <p>
+                        Discover the world of iPhones with our extensive collection of the latest models, 
+                        including iPhone 13, iPhone SE, and more. We offer competitive prices and exclusive 
+                        deals for our customers.
+                    </p>
+                    <p>
+                        Whether you're an Apple enthusiast or simply in need of a reliable smartphone, we have 
+                        the perfect iPhone for you.
+                    </p>
+                    <a href="#" class="btn btn-primary">Shop iPhones</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="{{url_for('static',filename = 'images/iphone.png')}}" alt="iPhone Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bitcoin Trading Section -->
+    <section class="container about-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Bitcoin Trading Made Easy</h2>
+                <p>
+                    Interested in Bitcoin trading? We provide a user-friendly platform for buying, selling, 
+                    and trading Bitcoin. Our secure and reliable service ensures that you can invest in 
+                    cryptocurrency with confidence.
+                </p>
+                <p>
+                    Join our community of Bitcoin enthusiasts and start your journey in the world of 
+                    cryptocurrencies today.
+                </p>
+                <a href="#" class="btn btn-primary">Start Trading Bitcoin</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{{url_for('static',filename = 'images/crypto.png')}}" alt="Bitcoin Image" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section (Add more content here) -->
+    <section class="container-fluid highlight-section">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Why Choose Us?</h2>
+                    <p>
+                        We take pride in offering top-notch customer service and the latest technology. Our team 
+                        is dedicated to helping you find the perfect iPhone and ensuring a smooth Bitcoin trading 
+                        experience.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Customer Testimonials</h2>
+                    <!-- Add customer testimonials here -->
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"I love my new iPhone from Your Store! It's sleek and powerful."</p>
+                        <footer class="blockquote-footer">John Doe</footer>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Trading Bitcoin with Your Store is a breeze. Highly recommended!"</p>
+                        <footer class="blockquote-footer">Jane Smith</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link faq-question" type="button" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                            How do I purchase an iPhone from Your Store?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        To purchase an iPhone from Your Store, simply visit our online store, browse our selection, and choose the iPhone model you want. Add it to your cart and proceed to checkout. You can also visit our physical store locations for in-person purchases.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link faq-question" type="button" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                            Is Bitcoin trading safe on your platform?
+                        </button>
+                    </h5>
+                </div>
+                <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, we take security seriously. Our platform uses advanced encryption and security measures to protect your assets and personal information. We also provide resources and guidelines to help you trade safely.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items with dropdowns as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section (Add contact information and form) -->
+    <section class="container contact-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Contact Us</h2>
+                <!-- Add contact information here -->
+                <p>Email: info@yourstore.com</p>
+                <p>Phone: +1-123-456-7890</p>
+                <p>242-1284 10401 8th Ave Inglewood, California(CA)</p>
+            </div>
+            <div class="col-lg-6">
+                <h2>Send Us a Message</h2>
+                <!-- Add a contact form here (You may need to use a third-party form service or create your own) -->
+                <form method="post" action="/dashboard/send">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" name ='name'>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (You can include your existing footer here) -->
+    <!-- Example: -->
+    <footer class="footer">
+        <div class="container text-center">
+            &copy; 2023 VR Accesories . All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap and FontAwesome scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        // FAQ dropdown functionality
+        $('.faq-question').click(function() {
+            $(this).find('i').toggleClass('fa-chevron-up fa-chevron-down');
+        });
+    </script>
+    {%endblock%}
+    {%endblock%}
+</body>
+</html>

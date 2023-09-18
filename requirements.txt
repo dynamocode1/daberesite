@@ -1,0 +1,7 @@
+gunicorn
+flask
+bleach
+flask_sqlalchemy
+flask_admin
+flask_bcrypt
+cloudinary

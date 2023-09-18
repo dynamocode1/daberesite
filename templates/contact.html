@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom CSS for the blue and white theme */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .contact-section {
+            padding: 50px 0;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+        }
+        .contact-form {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Add more custom styles as needed */
+    </style>
+</head>
+<body>
+
+    {%extends 'navbar.html'%}
+    {%block page_contents%}
+    {%block body%}
+
+    <!-- Header Section -->
+    <div class="header text-center">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you!</p>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="container contact-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Contact Information</h2>
+                <!-- Add your contact information here -->
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>242-1284 10401 8th Ave Inglewood, California(CA)</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@yourstore.com">info@yourstore.com</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+11234567890">+1-123-456-7890</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2>Contact Form</h2>
+                <!-- Add a contact form here (You may need to use a third-party form service or create your own) -->
+                <form class="contact-form" method="post" action="/dashboard/send">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (You can include your existing footer here) -->
+    <!-- Example: -->
+    <footer class="footer">
+        <div class="container text-center">
+            &copy; 2023 VR Accesories . All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap and FontAwesome scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    {%endblock%}
+    {%endblock%}
+</body>
+</html>

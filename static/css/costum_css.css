@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Set the background color of the body */
+}
+
+.wavy-box {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #ff5733, #33ff57, #5733ff); /* Set the initial background gradient */
+    background-size: 600% 600%; /* Make the background larger to create a wavy effect */
+    border-radius: 15px;
+    animation: wave 5s linear infinite; /* Apply the animation to create the waves */
+}
+.home-frame{
+    width: auto;
+    margin-left: auto;
+    background-color: blue;
+}
+@keyframes wave {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+

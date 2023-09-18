@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS here, if needed -->
+    <style>
+        /* Custom CSS for the blue and white theme */
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+        }
+        .container {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    {%extends 'navbar.html'%}
+    {%block page_contents%}
+    {%block body%}
+    
+    <!-- Main content container -->
+    <div class="container mt-4">
+        <h1 class="mb-4">Order Details</h1>
+        <div class="row">
+            <!-- Order form -->
+            <div class="col-md-6">
+                <form method="post" action="/purchase/submit_order">
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Delivery Address:</label>
+                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter delivery address" required></textarea>
+                    </div>
+                    
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+                    </div>
+
+                    <!-- Second Phone Number (Optional) -->
+                    <div class="form-group">
+                        <label for="secondPhone">Second Phone Number (Optional):</label>
+                        <input type="tel" class="form-control" id="secondPhone" name="secondPhone" placeholder="Enter second phone number">
+                    </div>
+
+                    <!-- List of Products Bought -->
+                    <div class="form-group">
+                        <label for="products">Products Bought:</label>
+                        
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </form>
+            </div>
+            
+            <!-- Payment terms -->
+            <div class="col-md-6">
+                <h3>Payment on Delivery</h3>
+                <p>
+                    Payment on delivery (also known as "Cash on Delivery" or COD) is a payment method where you pay for your order in cash or with a credit/debit card when it is delivered to your specified address. There is no need to make a payment online or in advance.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {%endblock%}
+    {%endblock%}
+
+</body>
+</html>

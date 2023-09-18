@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>VR</title>
+    <link rel="stylesheet" href="{{url_for('static' ,filename = 'css/bootstrap.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* Navbar styling */
+        .navbar-color {
+            background-color: lightskyblue;
+        }
+
+        .navbar {
+            background-color: blue;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5%;
+        }
+
+        .nav-btn {
+            background-color: white;
+            color: blue;
+        }
+
+        /* Custom CSS for the cart icon */
+        .cart-icon {
+            font-size: 24px;
+            margin-left: 10px;
+            color: white;
+        }
+
+        /* Active link styling */
+        .navbar-nav .nav-link.active {
+            color: lightskyblue; /* Change the color for active links */
+        }
+
+        /* Search input styling */
+        .navbar .form-control {
+            border-radius: 0; /* Remove input border-radius */
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">V.C</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url_for('views.contact')}}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url_for('views.about')}}">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url_for('views.crypto')}}">Crypto</a>
+                    </li>
+                </ul>
+                <!-- Move the cart link to the right using ml-auto -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn nav-btn" type="submit">Search</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">       
+                        <a class="nav-link" href="/cart">
+                            <i class="fas fa-shopping-cart cart-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+{% block body %}
+{% endblock %}
+
+<script>
+    // JavaScript to handle marking clicked links as active
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.forEach((navLink) => {
+                navLink.classList.remove('active');
+            });
+            link.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
