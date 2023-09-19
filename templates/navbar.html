@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>V.C</title>
-    <link rel="stylesheet" href="{{url_for('static' ,filename = 'css/bootstrap.css')}}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <script src="{{url_for('static' ,filename = 'js/main.js')}}"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    
     
     <style>
         .bd-placeholder-img {
@@ -33,7 +33,7 @@
             background-color: blue;
             padding: 10px 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 5%;
+            margin-bottom: 10%;
         }
 
         .nav-btn {
@@ -60,7 +60,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -109,19 +109,10 @@
 
 {% block body %}
 {% endblock %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    // JavaScript to handle marking clicked links as active
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            navLinks.forEach((navLink) => {
-                navLink.classList.remove('active');
-            });
-            link.classList.add('active');
-        });
-    });
-</script>
 
 </body>
 </html>
