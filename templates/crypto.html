@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VR |CRYPTO</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>VR | CRYPTO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Custom styles */
         body {
@@ -16,7 +16,7 @@
         .jumbotron {
             background-color: #007BFF; /* Blue hero background */
             color: #fff; /* White text color */
-            padding: 150px 0; /* Increased padding for a larger hero section */
+            padding: 100px 0; /* Increased padding for a larger hero section */
         }
         .container h1 {
             font-size: 36px; /* Larger font size for the hero headline */
@@ -25,86 +25,117 @@
             font-size: 20px; /* Larger font size for the hero sentence */
         }
         /* Add more custom styles here */
+
+        /* Additional styles for improved responsiveness */
+        @media (max-width: 768px) {
+            .jumbotron {
+                padding: 80px 0; /* Adjust padding for smaller screens */
+            }
+            .container h1 {
+                font-size: 30px; /* Adjust font size for smaller screens */
+            }
+            .container p {
+                font-size: 18px; /* Adjust font size for smaller screens */
+            }
+        }
+
+        /* Style for the sections */
+        section {
+            padding: 50px 0;
+        }
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 18px;
+        }
+
+        /* Style for images in sections */
+        .section-image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-{%extends 'navbar.html'%}
-{%block page_contents%}
-{%block body%}
-<!-- Hero Section -->
-<div class="jumbotron text-center">
-    <div class="container">
-        <h1>Welcome to Our Bitcoin Platform</h1>
-        <p>Bitcoin is a revolutionary digital currency that allows you to securely exchange value with anyone, anywhere in the world, without the need for intermediaries like banks or governments.</p>
-        <a class="btn btn-primary" href="{{url_for('views.about')}}">Learn More</a>
-    </div>
-</div>
-
-<!-- About Bitcoin Section -->
-<section id="about" class="container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>About Bitcoin</h2>
-            <p>Bitcoin is a decentralized digital currency that enables secure peer-to-peer transactions. Learn how it works and why it's changing the financial landscape.</p>
-        </div>
-        <div class="col-md-6">
-            <img src="{{url_for('static',filename = 'images/crypto.png')}}" alt="Bitcoin" class="img-fluid">
+    {% extends 'navbar.html' %}
+    {% block page_contents %}
+    {% block body %}
+    <!-- Hero Section -->
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1>Welcome to Our Bitcoin Platform</h1>
+            <p>Bitcoin is a revolutionary digital currency that allows you to securely exchange value with anyone, anywhere in the world, without the need for intermediaries like banks or governments.</p>
+            <a class="btn btn-primary" href="{{url_for('views.about')}}">Learn More</a>
         </div>
     </div>
-</section>
 
-<!-- Gift Cards Section -->
-<section id="gift-cards" class="bg-light container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="{{url_for('static',filename = 'images/gift.png')}}" alt="Gift Cards" class="img-fluid">
+    <!-- About Bitcoin Section -->
+    <section id="about" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Bitcoin</h2>
+                <p>Bitcoin is a decentralized digital currency that enables secure peer-to-peer transactions. Learn how it works and why it's changing the financial landscape.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{{url_for('static',filename = 'images/crypto.png')}}" alt="Bitcoin" class="section-image">
+            </div>
         </div>
-        <div class="col-md-6">
-            <h2>Gift Cards</h2>
-            <p>Explore the convenience of using Bitcoin to purchase gift cards for your favorite stores and online services.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Bitcoin Safety Section -->
-<section id="safety" class="container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Bitcoin Safety</h2>
-            <p>Your security matters. Discover how we prioritize the safety of your Bitcoin transactions and assets.</p>
+    <!-- Gift Cards Section -->
+    <section id="gift-cards" class="bg-light container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{url_for('static',filename = 'images/gift.png')}}" alt="Gift Cards" class="section-image">
+            </div>
+            <div class="col-md-6">
+                <h2>Gift Cards</h2>
+                <p>Explore the convenience of using Bitcoin to purchase gift cards for your favorite stores and online services.</p>
+            </div>
         </div>
-        <div class="col-md-6">
-            <img src="{{url_for('static',filename = 'images/security.png')}}" alt="Safety" class="img-fluid">
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contact Us Section -->
-<section id="contact" class="bg-light container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need assistance, please feel free to contact us. We're here to help.</p>
+    <!-- Bitcoin Safety Section -->
+    <section id="safety" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Bitcoin Safety</h2>
+                <p>Your security matters. Discover how we prioritize the safety of your Bitcoin transactions and assets.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{{url_for('static',filename = 'images/security.png')}}" alt="Safety" class="section-image">
+            </div>
         </div>
-        <div class="col-md-6">
-            <!-- Add a contact form or contact information here -->
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="bg-light container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, please feel free to contact us. We're here to help.</p>
+            </div>
+            <div class="col-md-6">
+                <!-- Add a contact form or contact information here -->
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer py-4 text-center">
-    <div class="container">
-        <p>&copy; VR Accesories</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer class="footer py-4 text-center">
+        <div class="container">
+            <p>&copy; VR Accessories</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
 
-<!-- Bootstrap JS and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-{%endblock%}
-{%endblock%}
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+    {% endblock %}
 </body>
 </html>

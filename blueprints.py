@@ -23,7 +23,7 @@ class Views:
     @view_bp.route('/')
     def home():
         products = Products.query.all()
-        print(products)
+        #print(products)
         return render_template('home.html', products=products)
 
     @view_bp.route('/about')
